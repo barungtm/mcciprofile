@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function doo(xx)
+{
+	var evt=window.event || e;
+	var data=evt.detail? evt.detail*(-120) : evt.wheelDelta;
+	
+			if(data==120)
+			{
+				if(one.width<5000)
+				one.width+=100;
+			}
+			else
+			{
+				if(one.width>100)	
+				one.width-=100;
+			}
+}
+</script>
+<title>Untitled Document</title>
+</head>
+
+<body>
+Hello<br />
+
+
+<div id="example2-xy" class="mouse-xy">MOUSE XY</div>
+<img src="images/road network.jpg" id="example2" onmousewheel="doo(this);"/>
+<script language="Javascript">
+	$('#example2').mousemove(function(e){
+        var x = e.pageX - this.offsetLeft;
+        var y = e.pageY - this.offsetTop;
+        $('#example2-xy').html("X: " + x + " Y: " + y); 
+    });
+	
+	$("#example2").mousewheel(function() {
+	alert("hello");
+  clearTimeout($.data(this, 'timer'));
+  $.data(this, 'timer', setTimeout(function() {
+     alert("Haven't scrolled in 250ms!");
+     //do something
+  }, 250));
+});
+</script>
+
+
+</body>
+</html>

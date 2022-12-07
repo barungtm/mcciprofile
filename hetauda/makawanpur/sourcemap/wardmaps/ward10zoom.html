@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="../../style.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Digital City Profile - Hetauda Municipality</title>
+<script type="text/javascript">
+var im=new Image();	
+im.src='../../images/ward10zoom.jpg';
+
+function doo(xx)
+{
+	var evt=window.event || e;
+	var data=evt.detail? evt.detail*(-120) : evt.wheelDelta;
+	
+			if(data==120)
+			{
+				if(one.width<5000)
+				one.width+=100;
+			}
+			else
+			{
+				if(one.width>100)	
+				one.width-=100;
+			}
+}
+</script>
+</head>
+
+<body>
+<div id="mainContainer1">
+        <div id="content">
+            <div style="width:100%; height:30px; background:#0b3c78; padding-top:5px;">
+            <h4>Topography - Ward 10</h4><br />
+            </div>
+            <p align="left">
+            <input type="button" onclick="one.width+=100;" value="Zoom In"/><input type="button" onclick="one.width-=100;" value="Zoom Out"/>
+            <br /></p>
+
+          <div style="float:left; width:700px; height:500px;overflow:auto;" onclick="one.width+=100;" onmousewheel="doo(this);">
+			<img width="700" name="one"/>
+            </div>
+            	<!--<IMG SRC="../../images/ward1.jpg" width="700" ALT="" border="0">-->
+		<br clear="all" />
+
+        </div>
+<div id="footer">
+<p align="right"><br />
+
+Developed By: <a href="http://www.proactivedevelopers.com" style="text-decoration:none" target="_blank">ProActive Web Developers</a>
+&nbsp;</p>
+</div>
+</div>
+<script type="text/javascript">
+	one.src=im.src;
+</script>
+</body>
+</html>
